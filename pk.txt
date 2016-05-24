@@ -12,7 +12,7 @@
   color:#fff;
   text-align:center;
 }
-h2
+h22
 {
   font-family:arial black;
   font-size: 40px;

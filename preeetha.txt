@@ -7,7 +7,7 @@
 
 <style type="text/css">  
 
-body
+bodyy
 {
   text-align: center;
   background-image:url(PLUTO.jpg);
