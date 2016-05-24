@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>SPACE SHUTTLE STATION</title>
+</head>
+
+<style type="text/css">  
+
+body
+{
+  text-align: center;
+  background-image:url(http://i.imgur.com/iAT7u4Z.jpg);
+  font-family: Georgia Bold Italic	;
+  color:#fff;
+}
+p{font-size:25px;}
+
+h3
+{
+   color: #fff;
+   font-size:40px;
+}
+
+h4
+{
+  color: #fff;
+  font-size: 30px;
+}
+#daysCount
+{display:inline-block;
+border-style:groove;
+border-radius:20px;
+padding:20px;
+font-size:55px;}
+#hoursCount
+{display:inline-block;
+font-size:30px;
+border-style:groove;border-radius:20px;
+padding:20px;}
+#minsCount
+{display:inline-block;border-radius:20px;
+font-size:30px;
+border-style:groove;
+padding:20px;}
+#secsCount
+{display:inline-block;border-radius:20px;
+font-size:30px;
+border-style:groove;
+padding:20px;}
+
+
+   
+</style>
+
+<script type="text/javascript">
+
+function countdown()
+{
+var dateLaunch=new Date(" may 28, 2016 23:59:59");
+var now=new Date(); /*current day*/
+var timeDiff=dateLaunch.getTime()-now.getTime();
+if(timeDiff<=0)
+{
+clearTimeout(timer);
+
+}
+
+var seconds=Math.floor(timeDiff/1000);
+var minutes=Math.floor(seconds/60);
+var hours=Math.floor(minutes/60);
+var days=Math.floor(hours/24);
+hours%=24;
+minutes%=60;
+seconds%=60;
+
+document.getElementById("daysCount").innerHTML=days;              /*these will populate the inner html of these four divs down there*/
+document.getElementById("hoursCount").innerHTML=hours;
+document.getElementById("minsCount").innerHTML=minutes;
+document.getElementById("secsCount").innerHTML=seconds;
+
+/*to create looping so that it keeps running for every one second untill we use the cleartimeout function*/
+var timer=setTimeout('countdown()',1000);
+}
+</script>
+
+<body>
+
+<h3> THE ROCKET TO PLUTO WILL START IN...</h3> 
+<h4>LAUNCH COUNTDOWN</h4>
+
+<div>
+<div id="daysCount"></div>
+<span>DAYS</span>
+</div>
+<div>
+<div id="hoursCount"></div> 
+<span>HOURS</span>
+</div>
+<div>
+<div id="minsCount"></div>
+<span> MINUTES</span>
+</div>
+<div>
+<div id="secsCount"></div>
+<span> SECONDS</span>
+</div>
+<p id="dem" style="color:white;"></p>
+<script>
+var d=new Date();
+document.getElementById("dem").innerHTML=d;
+</script>
+<script type="text/javascript" style="color:#fff;">countdown();</script>
+<p>THE PLUTOMETER ROCKET WILL BE LAUNCHED ON : </p>
+ <p id="demoo" style="color:red ;font-size:20px;"></p>
+<script type="text/javascript">
+document.getElementById("demoo").innerHTML=new Date("Sat May 28 2016 23:59:59 GMT+0530 (India Standard Time)");
+</script>
+
+
+<br>
+
+
+<p>For more details visit our website</p>
+<a href="https://www.nasa.gov"> NASA </a>
+
+
+<p id="dem" style="color:blue; font-size:15px; text-align:left "></p>
+<script type="text/javascript">
+var d=new Date();
+document.getElementById("dem").innerHTML=d;
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
