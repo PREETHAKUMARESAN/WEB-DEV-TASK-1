@@ -48,8 +48,11 @@ d=document.getElementById("userInput").value;
 
     }
 
-  function resume()
+  /*function resume()
     {}
+    function reset() 
+    {}
+  */
   
   function stop() 
     {
@@ -61,9 +64,7 @@ d=document.getElementById("userInput").value;
  
     }
   
-  function reset() 
-    {}
-	
+ 
 </script>
 </head>
 
@@ -91,26 +92,26 @@ d=document.getElementById("userInput").value;
         <span>DAYS</span>
     </div>
     
-	<div>
+    <div>
         <div id="hoursBox"></div>
         <span>HOURS</span>
     </div>
-	
-	<div>
+
+    <div>
         <div id="minsBox"></div>
         <span>MINUTES</span>
     </div>
 	
-	<div>
+    <div>
         <div id="secsBox"></div>
         <span>SECONDS</span>
     </div>
           <br>
-		  <br>
+          <br>
 
     <input type="submit" value="stop" onclick="stop()" />
           <br>
-		  <br>
+          <br>
     <input type="submit" value="resume" onclick="resume()" />
           <br>
           <br>
