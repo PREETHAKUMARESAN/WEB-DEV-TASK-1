@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>WELCOME TO PREETHA'S SPACE SHUTTLE STATION</title>
+</head>
+<body>
+
+<style type="text/css">  
+
+bodyy
+{
+  text-align: center;
+  background-image:url(PLUTO.jpg);
+  font-family: Georgia Bold Italic	;
+  
+}
+
+h2
+{
+  color: #177696;
+  font-size: 40px;
+ 
+}
+
+h3
+{color: #fff;
+font-size:50px;
+
+}
+#demo
+{
+   font-family: Comic Sans MS Bold;
+   color: #fff;
+   display: inline-block;
+   font-weight: 100;
+   text-align: center;
+   font-size: 100px;
+}
+
+#demo >div
+{
+   display: inline-block;
+}
+
+   
+.main
+{
+	padding :20px;
+	font-size: 40px;
+}
+</style>
+
+
+<h2> THE ROCKET TO PLUTO WILL START IN...</h2> 
+<h3>LAUNCH COUNTDOWN</h3>
+<div id="demo">
+  <div>
+    <span class="days"></span>
+    <div class="main">Days</div>
+  </div>
+ 
+  <div>
+    <span class="hours"></span>
+    <div class="main">Hours</div>
+  </div>
+  
+  <div>
+    <span class="minutes"></span>
+    <div class="main">Minutes</div>
+  </div>
+  
+  <div>
+    <span class="seconds"></span>
+    <div class="main">Seconds</div>
+  </div>
+</div>
+
+
+
+
+<p id="dem" style="color:white;"></p>
+
+<script>
+var d=new Date();
+document.getElementById("dem").innerHTML=d;
+</script>
+
+
+
+
+
+
+<script type="text/javascript">          /*javascript begins*/
+
+
+function remainingTime(end) {
+  var t = Date.parse(end) - Date.parse(new Date());
+  var seconds = Math.floor((t / 1000) % 60);
+  var minutes = Math.floor((t / 1000 / 60) % 60);
+  var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+  var days = Math.floor(t / (1000 * 60 * 60 * 24));
+  return {
+    'total': t,
+    'days': days,
+    'hours': hours,
+    'minutes': minutes,
+    'seconds': seconds
+  };
+}
+
+function initiateTime(id, end) {
+  var clock = document.getElementById(id);
+  var daysSpan = clock.querySelector('.days');
+  var hoursSpan = clock.querySelector('.hours');
+  var minutesSpan = clock.querySelector('.minutes');
+  var secondsSpan = clock.querySelector('.seconds');
+
+  function changeTime() {
+    var t = remainingTime(end);
+
+    daysSpan.innerHTML = t.days;
+    hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+    minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+    secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+    if (t.total <= 0) {
+      clearInterval(time);
+    }
+  }
+
+  changeTime();
+  var time = setInterval(changeTime, 1000);
+}
+
+var timestop = new Date(Date.parse(new Date()) + 2* 24 * 60 * 60 * 1000);
+initiateTime('demo', timestop);
+  
+  
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+ <title>WELCOME TO PREETHA'S SPACE SHUTTLE STATION</title>
+</head>
+
+<style type="text/css">  
+
+body
+{
+  text-align: center;
+  background-image:url(PLUTO.jpg);
+  font-family: Georgia Bold Italic	;
+  color:#fff;
+}
+p{font-size:25px;}
+
+h3
+{
+   color: #fff;
+   font-size:40px;
+}
+
+h4
+{
+  color: #fff;
+  font-size: 30px;
+}
+#daysBox
+{font-size:30px;}
+   
+</style>
+
+<script type="text/javascript">
+
+function countdown()
+{
+var dateLaunch=new Date(" june 31, 2016 00:01:00");
+var now=new Date(); /*current day*/
+var timeDiff=dateLaunch.getTime()-now.getTime();
+if(timeDiff<=0)
+{
+clearTimeout(timer);
+
+}
+
+var seconds=Math.floor(timeDiff/1000);
+var minutes=Math.floor(seconds/60);
+var hours=Math.floor(minutes/60);
+var days=Math.floor(hours/24);
+hours%=24;
+minutes%=60;
+seconds%=60;
+
+document.getElementById("daysBox").innerHTML=days;              /*these will populate the inner html of these four divs down there*/
+document.getElementById("hoursBox").innerHTML=hours;
+document.getElementById("minsBox").innerHTML=minutes;
+document.getElementById("secsBox").innerHTML=seconds;
+
+/*to create looping so that it keeps running for every one second untill we use the cleartimeout function*/
+var timer=setTimeout('countdown()',1000);
+}
+</script>
+
+<body>
+
+<h3> THE ROCKET TO PLUTO WILL START IN...</h3> 
+<h4>LAUNCH COUNTDOWN</h4>
+<p>
+DAYS
+<div id="daysBox"></div>
+<p>
+HOUR
+<div id="hoursBox"></div> 
+<p>
+MINUTES
+<div id="minsBox"></div>
+<p>
+SECONDS
+<div id="secsBox"></div>
+</p>
+
+<p id="dem" style="color:white;"></p>
+<script>
+var d=new Date();
+document.getElementById("dem").innerHTML=d;
+</script>
+<script type="text/javascript" style="color:#fff;">countdown();</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+ <title>WELCOME TO PREETHA'S SPACE SHUTTLE STATION</title>
+</head>
+<body>
+
+<style type="text/css">  
+
+body
+{
+  text-align: center;
+  background-image:url(PLUTO.jpg);
+  font-family: Georgia Bold Italic	;
+  
+}
+
+h2
+{
+  color: #177696;
+  font-size: 40px;
+  
+}
+
+h3
+{color: #fff;
+font-size:50px;
+
+}
+
+#demo
+{
+   font-family: Comic Sans MS Bold;
+   color: #fff;
+   display: inline-block;
+   font-weight: 100;
+   text-align: center;
+   font-size: 100px;
+}
+
+#demo >div                                       
+{
+   display: inline-block;                      /*to print everything in a straight line*/
+}
+
+   
+.main
+{
+	padding :20px;
+	font-size: 40px;
+}
+</style>
+<h2> THE ROCKET TO PLUTO WILL START IN...</h2> 
+<h3>LAUNCH COUNTDOWN</h3>
+<div id="demo">
+  <div>
+    <div class="days"></div>
+    <span class="main">Days</span>
+  </div>
+  <div>
+    <div class="hours"></div>
+    <span class="main">Hours</span>
+  </div>
+    <div class="minutes"></div>
+    <span class="main">Minutes</span>
+  <div>
+    <div class="seconds"></div>
+    <span class="main">Seconds</span>
+  </div>
+</div>
+
+<p id="dem" style="color:white;"></p>
+
+<script>
+var d=new Date();
+document.getElementById("dem").innerHTML=d;
+</script>
+
+
+<input type="text" id="userInput;">give me input</input>
+    <button onclick="test()">Submit</button>
+    <script>
+        function test()
+        {
+            var di = document.getElementById("userInput").value;
+            document.write(di);
+			var d=new Date();
+			d.setFullYear()
+        }
+    </script>
+
+
+
+<script>          /*javascript begins*/
+
+function remainingTime(end) 
+{
+  var t = Date.parse(end) - Date.parse(new Date());
+  var seconds = Math.floor((t / 1000) % 60);
+  var minutes = Math.floor((t / 1000 / 60) % 60);
+  var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+  var days = Math.floor(t / (1000 * 60 * 60 * 24));
+  return {
+    'total': t,
+    'days': days,
+    'hours': hours,
+    'minutes': minutes,
+    'seconds': seconds
+  };
+}
+
+function initiateTime( id, end) 
+{
+  var timer= document.getElementById(id);
+  var daysSpan = timer.querySelector('.days');           /*returns the first element that matches in the document*/
+  var hoursSpan = timer.querySelector('.hours');          /*get the first element in clock where class=days*/
+  var minutesSpan = timer.querySelector('.minutes');
+  var secondsSpan = timer.querySelector('.seconds');
+
+  function changeTime()
+  {
+    var t = remainingTime(end);
+
+    daysSpan.innerHTML = t.days;
+    hoursSpan.innerHTML = ('0' + t.hours);
+    minutesSpan.innerHTML = ('0' + t.minutes);
+    secondsSpan.innerHTML = ('0' + t.seconds);
+
+    if (t.total <= 0) 
+	{
+      clearInterval(time);
+    }
+  }
+
+  changeTime();
+  var time = setInterval(changeTime, 1000);
+}
+var timestop = new Date(Date.parse(new Date()) + 2* 24 * 60 * 60 * 1000);
+initiateTime('demo',timestop);
+ </script>
+ 
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+ <title>WELCOME TO PREETHA'S SPACE SHUTTLE STATION</title>
+</head>
+<body>
+
+<style type="text/css">  
+
+body
+{
+  text-align: center;
+  background-image:url(PLUTO.jpg);
+  font-family: Georgia Bold Italic	;
+  
+}
+
+h2
+{
+  color: #fff;
+  font-size: 50px;
+  
+}
+
+h3
+{color: #fff;
+font-size:40px;
+}
+
+h4
+{
+color: #fff;
+font-size: 30px;
+}
+
+#demo >div          /*for div part i.e the string days, minutes, hours*/
+{
+   color: #fff;
+   text-align: center;
+   font-family: Comic Sans MS Bold;
+   display: inline-block;
+   font-size:20px;
+}
+
+#demo div > span      /*for the span part i.e the actual days, minutes, hours...*/                               
+{
+   font-size:50px;
+}              
+
+   
+.main
+{
+	padding :20px;
+	font-size: 40px;
+}
+</style>
+<h2> WELCOME TO PREETHA'S SPACE STATION</h2>
+<h3> THE ROCKET TO PLUTO WILL START IN...</h3> 
+<h4>LAUNCH COUNTDOWN</h4>
+<div id="demo">
+  <div>
+    <span class="days "></span>
+    <div class="main">Day</div>   /*to print the string'days' and the noofdays in a box format i.e one below the other. Otherwise they will be 1 after the other*/
+  </div>
+  <div>
+    <span class="hours"></span>
+    <div class="main">Hours</div>
+  </div>
+  <div>
+    <span class="minutes"></span>
+    <div class="main">Minutes</div>
+  </div>
+  <div>
+    <span class="seconds"></span>
+    <div class="main">Seconds</div>
+  </div>
+</div>
+
+<p id="dem" style="color:white;"></p>
+
+<script type="text/javascript">
+var d=new Date();
+document.getElementById("dem").innerHTML=d;
+</script>
+
+
+
+
+
+
+<script type="text/javascript">          /*javascript begins*/
+
+function remainingTime(end) 
+{
+  var object = Date.parse(end) - Date.parse(new Date());            /*date.parse() converts it tinto milliseconds, hence  is in milliseconds*/
+  var seconds = Math.floor((object / 1000) % 60);                      /*to convert milliseconds into corresonding hours or minutes*/
+  var minutes = Math.floor((object / 1000 / 60) % 60);
+  var hours = Math.floor((object / (1000 * 60 * 60)) % 24);
+  var days = Math.floor(object / (1000 * 60 * 60 * 24));
+  return 
+  {
+    'total': object,'days': days, 'hours': hours, 'minutes': minutes, 'seconds': seconds
+  };
+}
+
+function initiateTime( id, end) 
+{
+  var timer = document.getElementById(id);                        /*the element that we target to update*/
+  var daysFinal = timer.querySelector('.days');                     /*returns the first element that matches in the document*/
+  var hoursFinal = timer.querySelector('.hours');                 /*get the first element in clock where class=hours*/
+  var minutesFinal = timer.querySelector('.minutes');
+  var secondsFinal = timer.querySelector('.seconds');
+
+  function changeTime()
+  {
+    var object = remainingTime(end);
+
+    daysFinal.innerHTML = object.days;
+    hoursFinal.innerHTML = object.hours;
+    minutesFinal.innerHTML = object.minutes;
+    secondsFinal.innerHTML = object.seconds;
+
+    if (object.total <= 0) 
+	{
+      clearInterval(time);
+    }
+  }
+
+  changeTime();
+  var time = setInterval(changeTime, 1000);                /*two parameters, second one is such to decrement the clock by 1 second=1000 milliseconds*/
+}
+
+var fulltime = new Date(Date.parse(new Date()) + 2*24*60*60*1000);
+initiateTime('demo',fulltime);
+ </script>
+ 
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+ <title>SPACE STATION</title>
+</head>
+<body>
+
+<style type="text/css">  
+*
+{
+  font-family: Comic Sans MS Bold;
+  color:#fff;
+  text-align:center;
+}
+h2
+{
+  font-size: 40px;
+}
+
+h3
+{
+  font-size:50px;
+}
+
+#demo 
+{
+   display: inline-block;
+   font-size:55px;
+   text-align:center;
+}
+#demo>div
+{
+   display:inline-block;
+   border-style:groove;
+   padding:10px;
+}
+
+#demo div>days                            
+{
+   display: inline-block;   
+   font-size: 45px;
+   border-style:groove;
+   padding:15px;
+}
+body
+{
+  background-image:url(PLUTO.jpg);
+}
+
+</style>
+
+<h2> THE ROCKET TO PLUTO WILL START IN...</h2> 
+<h3>LAUNCH COUNTDOWN</h3>
+
+<div id="demo">
+  <div>
+    <div class="days"></div>
+	<span>Days</span>
+  </div>
+  
+  <div>
+    <div class="hours"></div>
+    <span>Hours</span>
+  </div>
+  <div>
+    <div class="minutes"></div>
+    <span>Minutes</span>
+  </div>
+  <div>
+    <div class="seconds"></div>
+    <span>Seconds</span>
+  </div>
+</div>
+
+<p id="dem" style="color:white;"></p>
+<script type="text/javascript">
+var d=new Date();
+document.getElementById("dem").innerHTML=d;
+</script>
+
+
+
+<script type="text/javascript">          /*javascript begins*/
+
+var rocketLaunch=new Date(" may 28, 2016 23:59:59");
+var now=new Date();
+var timestop = new Date(Date.parse(new Date()) + rocketLaunch.getTime() - now.getTime());
+
+function remainingTime(end) 
+{
+  var t = Date.parse(end) - Date.parse(new Date());
+  var seconds = Math.floor((t / 1000) % 60);
+  var minutes = Math.floor((t / 1000 / 60) % 60);             /*to round off so that we dont have fractional seconds or minutes*/
+  var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+  var days = Math.floor(t / (1000 * 60 * 60 * 24));
+  return {
+    'total': t, 'days': days, 'hours': hours,'minutes': minutes,'seconds': seconds
+  };
+}
+
+function initiateTime(id,end) 
+{
+  var timer= document.getElementById(id);
+  var daysFinal = timer.querySelector('.days');           /*returns the first element that matches in the document*/
+  var hoursFinal = timer.querySelector('.hours');          /*get the first element in clock where class=days*/
+  var minutesFinal = timer.querySelector('.minutes');
+  var secondsFinal = timer.querySelector('.seconds');
+
+  function changeTime()
+  {
+    var t = remainingTime(end);
+    daysFinal.innerHTML = t.days;
+    hoursFinal.innerHTML = t.hours;
+    minutesFinal.innerHTML = t.minutes;
+    secondsFinal.innerHTML = t.seconds;
+
+    if (t.total <= 0) 
+	{
+      clearInterval(time);
+    }
+  }
+
+  changeTime();
+  var time = setInterval(changeTime,1000);
+}
+
+initiateTime('demo',timestop);
+
+</script>
+<br>
+<br>
+<br>
+<p>THE PLUTOMETER ROCKET WILL BE LAUNCHED ON : </p>
+ <p id="demoo" style="color:red ;font-size:20px;"></p>
+<script type="text/javascript">
+
+document.getElementById("demoo").innerHTML=new Date("Sat May 28 2016 23:59:59 GMT+0530 (India Standard Time)");
+</script>
+<br><br>
+<p>For more details visit our website</p>
+<a href="https://www.nasa.gov"></a>
+ </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
