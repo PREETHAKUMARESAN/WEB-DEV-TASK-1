@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+<script type="text/javascript">
+ 
+ 
+    var d,h,m,s,time,timer,seconds,minutes,hours,days;
+	var nowstop,newtime,timer1,timeDifff;
+
+ function cdtd()
+    {
+     d=document.getElementById("userInput").value;
+     h=document.getElementById("userInput1").value;
+     m=document.getElementById("userInput2").value;
+     s=document.getElementById("userInput3").value;
+     time= new Date(Date.parse(new Date()) + d * 24 * 60 * 60 * 1000 + h * 60 * 60 * 1000 + m * 60 * 1000 + s * 1000);
+     countdown();
+    }
+ function countdown()
+    {
+
+     var now=new Date();
+     timeDiff=time.getTime()-now.getTime();
+
+     if(timeDiff<=0)
+      {
+       clearTimeout(timer);
+      }
+
+     seconds=Math.floor(timeDiff/1000);
+     minutes=Math.floor(seconds/60);
+     hours=Math.floor(minutes/60);
+     days=Math.floor(hours/24);
+     hours%=24;
+     minutes%=60;
+     seconds%=60;
+     if(seconds>=0)
+      {
+       document.getElementById("daysBox").innerHTML=days;              
+       document.getElementById("hoursBox").innerHTML=hours;
+       document.getElementById("minsBox").innerHTML=minutes;
+       document.getElementById("secsBox").innerHTML=seconds;
+      }
+
+       /*to create looping so that it keeps running for every one second untill we use the cleartimeout function*/
+     timer=setTimeout('countdown()',1000);
+
+    }
+    
+  function start()
+    {
+	 time= new Date(Date.parse(new Date()) + d * 24 * 60 * 60 * 1000 + h * 60 * 60 * 1000 + m * 60 * 1000 + s * 1000);
+     countdown();
+	 
+	
+	}
+  
+  function stop() 
+    {
+      if(timer)
+      {
+	   clearInterval(timer);
+       timer= null;
+	   
+	   
+	  }
+ 
+    }
+  
+  function reset() 
+    {
+	   document.getElementById("daysBox").innerHTML=d;              
+       document.getElementById("hoursBox").innerHTML=h;
+       document.getElementById("minsBox").innerHTML=m;
+       document.getElementById("secsBox").innerHTML=s;
+	   clearInterval(timer);
+	   timer=null;
+	}
+	
+</script>
+</head>
+
+
+<body>
+   <h2>DAYS</h2>
+       <input type="number" id="userInput" autofocus value = "Enter days" ></input>
+       
+         <br>
+   <h2>HOURS</h2>
+       <input type="number" id="userInput1" autofocus value = "Enter hours" ></input>
+       
+         <br>
+    <h2>MINUTES</h2>
+        <input type="number" id="userInput2" autofocus value = "Enter minutes"></input>
+        
+         <br>
+    <h2>SECONDS</h2>
+        <input type="number" id="userInput3" autofocus value = "Enter seconds"></input>
+        <input type="submit" value="Submit" onclick="cdtd()" />
+         <br>
+
+    <div>
+        <div id="daysBox"></div>
+        <span>DAYS</span>
+    </div>
+    
+	<div>
+        <div id="hoursBox"></div>
+        <span>HOURS</span>
+    </div>
+	
+	<div>
+        <div id="minsBox"></div>
+        <span>MINUTES</span>
+    </div>
+	
+	<div>
+        <div id="secsBox"></div>
+        <span>SECONDS</span>
+    </div>
+          <br>
+		  <br>
+	<input type="submit" value="start" onclick="start()" />
+          <br>
+          <br>
+    <input type="submit" value="stop" onclick="stop()" />
+          <br>
+		  <br>
+    <input type="submit" value="reset" onclick="reset()" />
+         
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
